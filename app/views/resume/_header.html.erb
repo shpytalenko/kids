@@ -1,0 +1,18 @@
+<style>
+  .btn-primary { display:none;}
+</style>
+<script>
+  $( document ).ready(function() {
+  $("input[name='variant']").click(function(){
+    $(".btn-primary").show();
+  });
+});
+</script>
+
+<div class=row>
+  <div class="span6 offset2" >
+    <%= image_tag("other.jpg") %>
+  </div>
+</div>
+<hr>
+

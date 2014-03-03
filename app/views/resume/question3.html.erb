@@ -1,9 +1,4 @@
-<div class=row>
-  <div class="span4 offset4" >
-    <%= image_tag("http://upload.wikimedia.org/wikipedia/ru/archive/9/98/20121013113115!Mickey_Mouse_in_Steamboat_Willie,_1928.jpg" , :size=>"250x250") %>
-  </div>
-</div>
-<hr>
+<%= render "/resume/header" %>
 <% @question = Question.all[2] %>
 
 <div class="alert alert-info">
