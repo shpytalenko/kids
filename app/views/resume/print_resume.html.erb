@@ -57,47 +57,7 @@
   
   </tr>
 </table>
-<%
-=begin
-%>
-<div class="row" >
- 
-  <div class="span4">
-    <h4>
-    <dl class="dl-horizontal">
-    <dt><strong>Имя:</strong></dt>
-    <dd><%= @person.first_name %></dd>
-    <dt><strong>Фамилия: </strong></dt>
-    <dd><%= @person.last_name %></dd>
-    <dt><strong>Пол:</strong></dt>
-    <dd><%= @person.sex %></dd>
-    <dt><strong>Возраст:</strong></dt>
-    <dd><%= @person.age %></dd>
-  </dl>
-  </h4>
-</div>
-  <div class="span4">
-    <h4>
-    <dl class="dl-horizontal">
-      <dt><strong><%= @person.school_type %> №:</strong></dt>
-    <dd><%= @person.school_number %></dd>
-    <dt><strong>Класс:</strong></dt>
-    <dd><%= @person.klass %></dd>
-  </dl>
-  </h4>
-</div>
 
-
-  <div class="span4" >
-    <a href="#" class="thumbnail">
-          <img data-src="holder.js/260x180" alt="">
-      </a>
-  </div>
-
-</div>
-<%
-=end
-%>
 <hr>
 <div class="alert alert-info interests" >
   <h4><%=t '.title', :default => "Інтереси:" %></h4>
@@ -145,7 +105,8 @@
       list=[]
     list_services=[]  
     @person.variants.each do |variant|
-      list <<  variant.jobs.order("RANDOM()").first.name
+      id = @person.id%variant.jobs.size
+      list <<  variant.jobs[id].name
      #  variant.jobs.each do |job|
      #    list << " #{job.name} "
      #  end
