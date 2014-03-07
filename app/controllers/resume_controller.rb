@@ -9,9 +9,11 @@ class ResumeController < ApplicationController
  def show
   #  @user = current_user
   case step
-  when :info
+  when :start_page
     @person = Person.create
     cookies[:person_id] = @person.id
+  when :info
+    @person = Person.find(cookies[:person_id])
   end  
    render_wizard
  end

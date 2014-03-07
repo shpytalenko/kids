@@ -11,7 +11,8 @@ var customCameraHooks = {
 <hr>
 <div class="pagination-centered" >
 
-<%= headshot_default_config(Rails.application.config.session_options[:key], headshot_capture_path, :on_complete => "customCameraHooks.onComplete") %>
+  <%= headshot_default_config(Rails.application.config.session_options[:key], headshot_capture_path, 
+                              :on_complete => "customCameraHooks.onComplete") %>
 
 <%= headshot_camera %>
 
