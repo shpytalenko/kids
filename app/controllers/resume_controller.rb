@@ -21,6 +21,8 @@ class ResumeController < ApplicationController
  def update
   @person = Person.find(cookies[:person_id])
   case step
+    when :start_page
+      cookies[:lang] = params[:lang]
     when :info
       @person.attributes = params[:person]
     when :question1

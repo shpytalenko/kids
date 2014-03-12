@@ -1,8 +1,13 @@
 <%= nested_form_for @question, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%#= f.label "Вопрос:", :class => 'control-label' %>
+    Укр.
     <div class="controls">
       <%= f.text_area :text, :class => 'text_area', :rows =>3, :style=>"width:700px;" %>
+    </div>
+    Рус.
+    <div class="controls">
+      <%= f.text_area :text_rus, :class => 'text_area', :rows =>3, :style=>"width:700px;" %>
     </div>
   </div>
   <h5> Варианты ответов: </h5>
@@ -15,7 +20,10 @@
         <td>
           <div class="control-group">
             <div class="controls">
+              <%= variant_form.label "Укр."%>
               <%= variant_form.text_field :text , :rows =>3, :style=>"width:700px;" %>
+              <%= variant_form.label "Рус."%>
+              <%= variant_form.text_field :text_rus , :rows =>3, :style=>"width:700px;" %>
               <%= variant_form.number_field :id , :style=>"display:none;" %>
               
               <%#= link_to "Составить список профессий",

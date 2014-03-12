@@ -1,0 +1,5 @@
+class AddTextUkrToQuestions < ActiveRecord::Migration
+  def change
+    add_column :questions, :ukr_text, :text
+  end
+end
