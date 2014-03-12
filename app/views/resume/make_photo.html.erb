@@ -6,7 +6,11 @@ var customCameraHooks = {
 };
 </script>
 <div class="alert alert-info">
-<h2>Дивись у камеру, посміхнись і нажми кнопку "Фото" коли будеш готовий ☺</h2>
+<% if cookies[:lang] == "ukr" %>
+  <h2>Дивись у камеру, посміхнись і нажми кнопку "Фото" коли будеш готовий ☺</h2>
+<% else %>
+  <h2>Смотри на камеру,улыбнись и нажми кнопку "Фото" когда будеш готов </h2>
+<% end %>
 </div>
 <hr>
 <div class="pagination-centered" >
@@ -24,6 +28,11 @@ var customCameraHooks = {
 </div>
 <br  />
 <hr>
+
   <div class="form-actions pagination-centered" >
-    <%= link_to 'Далі', next_wizard_path,:id=>"next", :class=> " btn btn-primary btn-large" , :style=>"visibility:hidden;"%>
+    <% if cookies[:lang] == "ukr"%>
+      <%= link_to 'Далі', next_wizard_path,:id=>"next", :class=> " btn btn-primary btn-large" , :style=>"visibility:hidden;"%>
+    <% else %>
+      <%= link_to 'Дальше', next_wizard_path,:id=>"next", :class=> " btn btn-primary btn-large" , :style=>"visibility:hidden;"%>
+    <% end %>
   </div>

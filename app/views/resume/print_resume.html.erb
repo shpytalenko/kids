@@ -10,38 +10,44 @@
   });
 </script>
 <div id="print_page">
-<div class="row">
-  <div class="span4 offset4">
-    <h2 class="muted"> Резюме </h2>
+  <div class="alert alert-info">
+  <div class="row-fluid">
+  <div class="span4">
+      <%= image_tag "kidslandia_logo.jpg", :style=>"width:150px;" %>
+  </div>
+  <div class="span4">
+    <h1 >  Резюме </h1>   
   </div>
 </div>
+</div>
+<hr>
 <% @person = Person.find(cookies[:person_id]) %>
 <%- model_class = Person -%>
 <div class="alert alert-info">
-  <h4><%=t '.title', :default => "Персональна інформація:" %></h4>
+  <h4><%=t '.title', :default => "Персональна інформація / Персональная информация:" %></h4>
 </div>
 <table class="table" >
-  <tr  >
+  <tr >
     <td style="width:50%">
       <table style="width:90%;">
         <tr>
-          <td> Ім'я:</td>
+          <td> Ім'я / Имя:</td>
           <td> <%= @person.first_name %></td>
         </tr>
         <tr>
-          <td> Прізвище:</td>
+          <td> Прізвище / Фамилия:</td>
           <td> <%= @person.last_name %></td>
         </tr>
         <tr>
-          <td> Стать:</td>
+          <td> Стать / Пол:</td>
           <td> <%= @person.sex %></td>
         </tr>
         <tr>
-          <td> Вік:</td>
+          <td> Вік / Возраст:</td>
           <td> <%= @person.age %></td>
         </tr>
         <tr>
-          <td>Місце навчання: </td>
+          <td>Місце навчання / Место учебы: </td>
           <td> <%= @person.school_type %> №:<%= @person.school_number %>, <%= @person.klass %>  </td>
         </tr>
       </table>  
@@ -50,7 +56,8 @@
     <td style="width:50%;">
       <div class="pagination-centered" >
         <% if @person.headshot_photos.size >0  %>
-          <%= image_tag "/headshots/#{@person.headshot_photos.last.image_file_name}" , :size => "200x200" %>
+          <%= image_tag "/headshots/#{@person.headshot_photos.last.image_file_name}" , :class=>"img-polaroid",
+             :size => "200x200" %>
         <% end %>
       </div>
     </td>
@@ -60,7 +67,7 @@
 
 <hr>
 <div class="alert alert-info interests" >
-  <h4><%=t '.title', :default => "Інтереси:" %></h4>
+  <h4><%=t '.title', :default => "Інтереси / Интересы:" %></h4>
 </div>
 <div class="row  interests">
   <div class="span6 offset3 muted">
@@ -97,7 +104,7 @@
 %>
 <hr>
 <div  class="alert alert-info">
-  <h4><%=t '.title', :default => "Рекомендовані професії" %></h4>
+  <h4><%=t '.title', :default => "Рекомендовані професії / Рекомендуемые профессии:" %></h4>
 </div>
 <div class="row ">
   <div class="span6 offset3 muted ">
@@ -128,5 +135,9 @@
   </div>
 </div>
 <hr />
+ <% if cookies[:lang] == "ukr" %>
   <p class="pagination-centered"> <a class="btnPrint btn btn-primary btn-large" href='iframes/iframe.html' id="print_link">Роздрукувати</a></p>
+ <% else %>
+  <p class="pagination-centered"> <a class="btnPrint btn btn-primary btn-large" href='iframes/iframe.html' id="print_link">Печать</a></p>
+ <% end %>
 </div>

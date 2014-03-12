@@ -14,9 +14,13 @@
   <% end %>
   <hr>
   <div class="form-actions pagination-centered">
-    <%= submit_tag "Далі" , :class=> " btn btn-primary btn-large"%>
+    <% if cookies[:lang] == "ukr"%>
+      <%= submit_tag "Далі" , :class=> " btn btn-primary btn-large"%>
+    <% else %>
+      <%= submit_tag "Дальше" , :class=> " btn btn-primary btn-large"%>
+    <% end %> 
   </div>
-<% end %>
+  <% end %>
 
 
 <br  />
