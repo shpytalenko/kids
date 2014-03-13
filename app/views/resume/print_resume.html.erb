@@ -11,18 +11,21 @@
 </script>
 <div id="print_page">
   <div class="alert alert-info">
-  <div class="row-fluid">
-  <div class="span4">
-      <%= image_tag "kidslandia_logo.jpg", :style=>"width:150px;" %>
+    <table>
+      <tr>
+        <td style="width:20%;">
+          <%= image_tag "kidslandia_logo.jpg", :style=>"width:150px;" %>
+        </td>
+        <td style="width:30%;"></td>
+        <td>
+          <h1 >  Резюме </h1>   
+        <td>
+        <td style="width:40%;">
+          <%#= image_tag "other.jpg", :class => "img-polaroid" %>
+        </td>
+      </tr>
+    </table>
   </div>
-  <div class="span4">
-    <h1 >  Резюме </h1>   
-  </div>
-  <div class="span4">
-    <%= image_tag "other.jpg", :class => "img-polaroid" %>
-  </div>
-</div>
-</div>
 <hr>
 <% @person = Person.find(cookies[:person_id]) %>
 <%- model_class = Person -%>
@@ -68,7 +71,6 @@
   </tr>
 </table>
 
-<hr>
 <div class="alert alert-info interests" >
   <h4><%=t '.title', :default => "Інтереси / Интересы:" %></h4>
 </div>

@@ -1,5 +1,12 @@
 @import "twitter/bootstrap/bootstrap";
 @media print {
+  body * {
+    visibility:hidden;
+  }
+  #print_page  * {
+    visibility:visible;
+  }
+    
   #print_link {
     display:none;
     }
