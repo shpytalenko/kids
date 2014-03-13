@@ -1,4 +1,11 @@
 @import "twitter/bootstrap/bootstrap";
+
+@media screen {
+  body { 
+	  padding-top: 60px;
+  }
+}
+
 @media print {
   body * {
     visibility:hidden;
@@ -6,19 +13,18 @@
   #print_page  * {
     visibility:visible;
   }
+  
+  body { 
+	  padding-top: 10px;
+  }
     
   #print_link {
     display:none;
     }
-  .interests {
-      display:none;
-    }
-  #print_page { }
+    #print_page { }
   
   }
-body { 
-	padding-top: 60px;
-}
+
 
 @import "twitter/bootstrap/responsive";
 
